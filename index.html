@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="ui.bootstrap.demo" id="top">
+<html lang="en" ng-app="ng-boot-boiler-demo" id="top">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,9 +10,12 @@
     <meta name="description" content="angular & bootstrap boilerplate for rapid modern web dev">
 
     <script src="//cdnjs.cloudflare.com/ajax/libs/fastclick/0.6.7/fastclick.min.js"></script>
-    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.min.js"></script>
-    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular-touch.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.14/angular.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.14/angular-touch.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.12.1/ui-bootstrap.min.js"></script>
+
+    <!-- ng modules -->
+    <script src="socialButtons/socialButtonsDirective.js"></script>
     <script src="app.js"></script>
 
     <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet"/>
@@ -67,7 +70,8 @@
             </h1>
 
             <p>Bootstrap components written in pure <a href="http://angularjs.org">AngularJS</a> by the <a
-                    href="http://angular-ui.github.io">AngularUI Team</a></p>
+                    href="http://angular-ui.github.io">AngularUI Team</a>
+            </p>
 
             <p>
                 <a class="btn btn-outline-inverse btn-lg" href="https://github.com/angular-ui/bootstrap"><i class="icon-github"></i>Code on Github</a>
@@ -77,50 +81,12 @@
                 <button type="button" class="btn btn-outline-inverse btn-lg" ng-click="showBuildModal()"><i class="glyphicon glyphicon-wrench"></i> Create a Build</button>
             </p>
         </div>
-        <div class="bs-social container">
-            <ul class="bs-social-buttons">
-                <li>
-                    <iframe src="//ghbtns.com/github-btn.html?user=angular-ui&repo=bootstrap&type=watch&count=true"
-                            allowtransparency="true" frameborder="0" scrolling="0" width="110" height="20"></iframe>
-                </li>
-                <li>
-                    <iframe src="//ghbtns.com/github-btn.html?user=angular-ui&repo=bootstrap&type=fork&count=true"
-                            allowtransparency="true" frameborder="0" scrolling="0" width="110" height="20"></iframe>
-                </li>
-                <li>
-                    <a href="https://twitter.com/share" class="twitter-share-button"
-                       data-hashtags="angularjs">Tweet</a>
-                    <script>!function (d, s, id) {
-                        var js, fjs = d.getElementsByTagName(s)[0];
-                        if (!d.getElementById(id)) {
-                            js = d.createElement(s);
-                            js.id = id;
-                            js.src = "//platform.twitter.com/widgets.js";
-                            fjs.parentNode.insertBefore(js, fjs);
-                        }
-                    }(document, "script", "twitter-wjs");</script>
-                </li>
-                <li>
-                    <!-- Place this tag where you want the +1 button to render. -->
-                    <div class="g-plusone" data-size="medium"></div>
 
-                    <!-- Place this tag after the last +1 button tag. -->
-                    <script type="text/javascript">
-                        (function () {
-                            var po = document.createElement('script');
-                            po.type = 'text/javascript';
-                            po.async = true;
-                            po.src = 'https://apis.google.com/js/plusone.js';
-                            var s = document.getElementsByTagName('script')[0];
-                            s.parentNode.insertBefore(po, s);
-                        })();
-                    </script>
-                </li>
-            </ul>
-        </div>
+        <social-buttons ghForkBtn="1233jv"></social-buttons>
+
     </header>
     <div class="container">
-
+        website content here
     </div><!-- /.container -->
 </div><!-- /.main -->
 <footer class="footer">

@@ -1,5 +1,5 @@
 /* global FastClick, smoothScroll */
-angular.module('ui.bootstrap.demo', ['ui.bootstrap', 'ngTouch'], function($httpProvider){
+var app = angular.module('ng-boot-boiler-demo', ['ui.bootstrap', 'ngTouch', 'social-button-directive'], function($httpProvider){
     FastClick.attach(document.body);
     delete $httpProvider.defaults.headers.common['X-Requested-With'];
 }).run(['$location', function($location){
@@ -11,7 +11,7 @@ angular.module('ui.bootstrap.demo', ['ui.bootstrap', 'ngTouch'], function($httpP
     }
 }]);
 
-function MainCtrl($scope, $http, $document, $modal, orderByFilter) {
+app.controller('MainCtrl', function($scope, $http, $document, $modal, orderByFilter) {
     $scope.showBuildModal = function() {
         var modalInstance = $modal.open({
             templateUrl: 'buildModal.html',
@@ -33,7 +33,7 @@ function MainCtrl($scope, $http, $document, $modal, orderByFilter) {
             controller: 'DownloadCtrl'
         });
     };
-}
+});
 
 /*
  * The following compatibility check is from:
