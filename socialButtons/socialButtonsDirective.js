@@ -9,7 +9,7 @@
     app.directive("socialButtons", function() {
         return {
             restrict: 'AE',
-            templateUrl: "./socialButtons.html",
+            templateUrl: "socialButtons/socialButtons.html",
             scope: {
                 ghForkBtn:'@',
                 ghWatchBtn:'@',
