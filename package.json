@@ -65,8 +65,8 @@
         "ui.bootstrap": "./node_modules/angular-bootstrap/dist/ui-bootstrap.min.js",
         "ngTouch": "./node_modules/angular-touch/angular-touch.min.js",
         "fastclick": "./node_modules/fastclick/build/fastclick.min.js",
-        "header-navbar": "./navHeader/navHeader.js",
-        "splash-header": "./splashHeader/splashHeader.js",
-        "app-footer": "./appFooter/appFooter.js"
+        "header-navbar": "./ng-modules/navHeader/navHeader.js",
+        "splash-header": "./ng-modules/splashHeader/splashHeader.js",
+        "app-footer": "./ng-modules/appFooter/appFooter.js"
     }
 }

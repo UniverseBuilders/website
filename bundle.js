@@ -94,27 +94,7 @@ var isOldBrowser;
 
 })();
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{"app-footer":2,"fastclick":8,"header-navbar":4,"ngTouch":6,"smoothScroll":3,"splash-header":9,"ui.bootstrap":5}],2:[function(require,module,exports){
-(function (global){
-
-; require("/home/tylar/ng-boot-boiler/node_modules/angular/angular.min.js");
-;__browserify_shim_require__=require;(function browserifyShim(module, exports, require, define, browserify_shim__define__module__export__) {
-(function(){
-    var app = angular.module('app-footer', []);
-
-    app.directive("appFooter", function() {
-        return {
-            restrict: 'E',
-            templateUrl: "appFooter/appFooter.html"
-        };
-    });
-})();
-; browserify_shim__define__module__export__(typeof angular.module('app-footer').name != "undefined" ? angular.module('app-footer').name : window.angular.module('app-footer').name);
-
-}).call(global, undefined, undefined, undefined, undefined, function defineExport(ex) { module.exports = ex; });
-
-}).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{"/home/tylar/ng-boot-boiler/node_modules/angular/angular.min.js":7}],3:[function(require,module,exports){
+},{"app-footer":3,"fastclick":9,"header-navbar":4,"ngTouch":7,"smoothScroll":2,"splash-header":5,"ui.bootstrap":6}],2:[function(require,module,exports){
 (function (global){
 ;__browserify_shim_require__=require;(function browserifyShim(module, exports, require, define, browserify_shim__define__module__export__) {
 /*
@@ -220,7 +200,27 @@ return smoothScroll;
 }).call(global, undefined, undefined, undefined, undefined, function defineExport(ex) { module.exports = ex; });
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{}],4:[function(require,module,exports){
+},{}],3:[function(require,module,exports){
+(function (global){
+
+; require("/home/tylar/ng-boot-boiler/node_modules/angular/angular.min.js");
+;__browserify_shim_require__=require;(function browserifyShim(module, exports, require, define, browserify_shim__define__module__export__) {
+(function(){
+    var app = angular.module('app-footer', []);
+
+    app.directive("appFooter", function() {
+        return {
+            restrict: 'E',
+            templateUrl: "ng-modules/appFooter/appFooter.html"
+        };
+    });
+})();
+; browserify_shim__define__module__export__(typeof angular.module('app-footer').name != "undefined" ? angular.module('app-footer').name : window.angular.module('app-footer').name);
+
+}).call(global, undefined, undefined, undefined, undefined, function defineExport(ex) { module.exports = ex; });
+
+}).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
+},{"/home/tylar/ng-boot-boiler/node_modules/angular/angular.min.js":8}],4:[function(require,module,exports){
 (function (global){
 
 ; require("/home/tylar/ng-boot-boiler/node_modules/angular/angular.min.js");
@@ -231,7 +231,7 @@ return smoothScroll;
     app.directive("navHeader", function() {
         return {
             restrict: 'E',
-            templateUrl: "navHeader/navHeader.html"
+            templateUrl: "ng-modules/navHeader/navHeader.html"
         };
     });
 })();
@@ -240,7 +240,27 @@ return smoothScroll;
 }).call(global, undefined, undefined, undefined, undefined, function defineExport(ex) { module.exports = ex; });
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{"/home/tylar/ng-boot-boiler/node_modules/angular/angular.min.js":7}],5:[function(require,module,exports){
+},{"/home/tylar/ng-boot-boiler/node_modules/angular/angular.min.js":8}],5:[function(require,module,exports){
+(function (global){
+
+; require("/home/tylar/ng-boot-boiler/node_modules/angular/angular.min.js");
+;__browserify_shim_require__=require;(function browserifyShim(module, exports, require, define, browserify_shim__define__module__export__) {
+(function(){
+    var app = angular.module('splash-header', ['social-button-directive']);
+
+    app.directive("splashHeader", function() {
+        return {
+            restrict: 'E',
+            templateUrl: "ng-modules/splashHeader/splashHeader.html"
+        };
+    });
+})();
+; browserify_shim__define__module__export__(typeof angular.module('splash-header').name != "undefined" ? angular.module('splash-header').name : window.angular.module('splash-header').name);
+
+}).call(global, undefined, undefined, undefined, undefined, function defineExport(ex) { module.exports = ex; });
+
+}).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
+},{"/home/tylar/ng-boot-boiler/node_modules/angular/angular.min.js":8}],6:[function(require,module,exports){
 (function (global){
 
 ; require("/home/tylar/ng-boot-boiler/node_modules/angular/angular.min.js");
@@ -259,7 +279,7 @@ return a.replace(b,function(a,b){return(b?c:"")+a.toLowerCase()})}var b={placeme
 }).call(global, undefined, undefined, undefined, undefined, function defineExport(ex) { module.exports = ex; });
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{"/home/tylar/ng-boot-boiler/node_modules/angular/angular.min.js":7}],6:[function(require,module,exports){
+},{"/home/tylar/ng-boot-boiler/node_modules/angular/angular.min.js":8}],7:[function(require,module,exports){
 (function (global){
 
 ; require("/home/tylar/ng-boot-boiler/node_modules/angular/angular.min.js");
@@ -283,7 +303,7 @@ l,!0),f=[]),m=Date.now(),d(f,h,t),r&&r.blur(),u.isDefined(g.disabled)&&!1!==g.di
 }).call(global, undefined, undefined, undefined, undefined, function defineExport(ex) { module.exports = ex; });
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{"/home/tylar/ng-boot-boiler/node_modules/angular/angular.min.js":7}],7:[function(require,module,exports){
+},{"/home/tylar/ng-boot-boiler/node_modules/angular/angular.min.js":8}],8:[function(require,module,exports){
 /*
  AngularJS v1.3.15
  (c) 2010-2014 Google, Inc. http://angularjs.org
@@ -534,9 +554,9 @@ s=h.ngOptions,w=!1,v,m=!1,F=A(W.createElement("option")),E=A(W.createElement("op
 d.parent(),n=k.data("$selectController")||k.parent().data("$selectController");n&&n.databound||(n=c);f?a.$watch(f,function(a,c){e.$set("value",a);c!==a&&n.removeOption(c);n.addOption(a,d)}):n.addOption(e.value,d);d.on("$destroy",function(){n.removeOption(e.value)})}}}}],Xd=ea({restrict:"E",terminal:!1}),Bc=function(){return{restrict:"A",require:"?ngModel",link:function(a,c,d,e){e&&(d.required=!0,e.$validators.required=function(a,c){return!d.required||!e.$isEmpty(c)},d.$observe("required",function(){e.$validate()}))}}},
 Ac=function(){return{restrict:"A",require:"?ngModel",link:function(a,c,d,e){if(e){var f,g=d.ngPattern||d.pattern;d.$observe("pattern",function(a){C(a)&&0<a.length&&(a=new RegExp("^"+a+"$"));if(a&&!a.test)throw R("ngPattern")("noregexp",g,a,wa(c));f=a||t;e.$validate()});e.$validators.pattern=function(a){return e.$isEmpty(a)||x(f)||f.test(a)}}}}},Dc=function(){return{restrict:"A",require:"?ngModel",link:function(a,c,d,e){if(e){var f=-1;d.$observe("maxlength",function(a){a=aa(a);f=isNaN(a)?-1:a;e.$validate()});
 e.$validators.maxlength=function(a,c){return 0>f||e.$isEmpty(c)||c.length<=f}}}}},Cc=function(){return{restrict:"A",require:"?ngModel",link:function(a,c,d,e){if(e){var f=0;d.$observe("minlength",function(a){f=aa(a)||0;e.$validate()});e.$validators.minlength=function(a,c){return e.$isEmpty(c)||c.length>=f}}}}};Q.angular.bootstrap?console.log("WARNING: Tried to load angular more than once."):(Nd(),Pd(ca),A(W).ready(function(){Jd(W,uc)}))})(window,document);!window.angular.$$csp()&&window.angular.element(document).find("head").prepend('<style type="text/css">@charset "UTF-8";[ng\\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide:not(.ng-hide-animate){display:none !important;}ng\\:form{display:block;}</style>');
-//# sourceMappingURL=angular.min.js.map
+//# sourceMappingURL=./angular.min.js.map
 
-},{}],8:[function(require,module,exports){
+},{}],9:[function(require,module,exports){
 (function (global){
 ;__browserify_shim_require__=require;(function browserifyShim(module, exports, require, define, browserify_shim__define__module__export__) {
 /*
@@ -572,24 +592,4 @@ FastClick.notNeeded=function(a){var c,b;if("undefined"===typeof window.ontouchst
 }).call(global, undefined, undefined, undefined, undefined, function defineExport(ex) { module.exports = ex; });
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{}],9:[function(require,module,exports){
-(function (global){
-
-; require("/home/tylar/ng-boot-boiler/node_modules/angular/angular.min.js");
-;__browserify_shim_require__=require;(function browserifyShim(module, exports, require, define, browserify_shim__define__module__export__) {
-(function(){
-    var app = angular.module('splash-header', ['social-button-directive']);
-
-    app.directive("splashHeader", function() {
-        return {
-            restrict: 'E',
-            templateUrl: "splashHeader/splashHeader.html"
-        };
-    });
-})();
-; browserify_shim__define__module__export__(typeof angular.module('splash-header').name != "undefined" ? angular.module('splash-header').name : window.angular.module('splash-header').name);
-
-}).call(global, undefined, undefined, undefined, undefined, function defineExport(ex) { module.exports = ex; });
-
-}).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{"/home/tylar/ng-boot-boiler/node_modules/angular/angular.min.js":7}]},{},[1]);
+},{}]},{},[1]);
