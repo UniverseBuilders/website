@@ -1,7 +1,7 @@
 /* global FastClick, smoothScroll */
 var app = angular.module(
     'ng-boot-boiler-demo',
-    ['ui.bootstrap', 'ngTouch', 'social-button-directive', 'header-navbar'],
+    ['ui.bootstrap', 'ngTouch', 'header-navbar', 'splash-header', 'app-footer'],
     function($httpProvider){
         FastClick.attach(document.body);
         delete $httpProvider.defaults.headers.common['X-Requested-With'];
