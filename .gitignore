@@ -1,2 +1,5 @@
 # jetbrains
 .idea/
+
+bundle.js
+node_modules/
