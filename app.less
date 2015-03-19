@@ -1,5 +1,11 @@
 @import "assets/bootstrap-3.3.4/less/bootstrap";
+@import "ng-modules/appFooter/appFooter";
+@import "ng-modules/socialButtons/socialButtons";
+@import "ng-modules/navHeader/navHeader";
+@import "ng-modules/splashHeader/splashHeader";
 
+
+/* START angular-ui bootstrap section */
 body {
   opacity: 1;
   -webkit-transition: opacity 1s ease;
@@ -19,49 +25,8 @@ section {
   padding-top: 30px;
 }
 
-.page-header h1 > small > a {
-  color: #999;
-}
-.page-header h1 > small > a:hover {
-  text-decoration: none;
-}
-
-.footer {
-  text-align: center;
-  padding: 30px 0;
-  margin-top: 70px;
-  border-top: 1px solid #e5e5e5;
-  background-color: #f5f5f5;
-}
-
-.bs-social {
-  margin-top: 20px;
-  margin-bottom: 20px;
-  text-align: center;
-}
-
-@media (min-width: 768px) {
-
-  .bs-social {
-    text-align: left;
-  }
-
-}
-
 .nav, .pagination, .carousel, .panel-title a {
   cursor: pointer;
-}
-
-.bs-social-buttons {
-  display: inline-block;
-  margin-bottom: 0;
-  padding-left: 0;
-  list-style: none;
-}
-.bs-social-buttons li {
-  display: inline-block;
-  padding: 5px 8px;
-  line-height: 1;
 }
 
 @media (max-width: 767px) {
@@ -119,85 +84,6 @@ section {
   background-color: #f8f8f8;
   border: 1px solid #ccc;
   border-bottom-color: transparent;
-}
-
-/*
- * Button Inverse
- *
- * Buttons in the masthead.
- */
-
-.btn-outline-inverse {
-  color: #fff;
-  background-color: transparent;
-  border-color: #cdbfe3;
-  margin: 10px;
-}
-
-@media (min-width: 768px) {
-
-  .btn-outline-inverse {
-    width: auto;
-    margin: 20px 5px 20px 0;
-    padding: 18px 24px;
-    font-size: 21px;
-  }
-
-}
-
-.btn-outline-inverse:hover, .btn-outline-inverse:focus, .btn-outline-inverse:active {
-  color: #563d7c;
-  text-shadow: none;
-  background-color: #fff;
-  border-color: #fff;
-}
-
-
-/* Page headers */
-.bs-header {
-  padding: 30px 15px 40px; /* side padding builds on .container 15px, so 30px */
-  font-size: 16px;
-  text-align: center;
-  text-shadow: 0 1px 0 rgba(0,0,0,.15);
-  color: #cdbfe3;
-  background-color: #563d7c;
-  background-image: url(header.png);
-}
-.bs-header a {
-  color: #fff;
-  font-weight: normal;
-}
-.bs-header h1 {
-  color: #fff;
-}
-.bs-header p {
-  font-weight: 200;
-  line-height: 1.4;
-}
-.bs-header .container {
-  position: relative;
-}
-
-@media (min-width: 768px) {
-  .bs-header {
-    font-size: 30px;
-    text-align: left;
-  }
-  .bs-header h1 {
-    font-size: 100px;
-    line-height: 1;
-  }
-}
-
-@media (min-width: 992px) {
-  .bs-header p {
-    margin-right: 25%;
-  }
-}
-
-.navbar-inner {
-  -webkit-box-shadow: 0 3px 3px rgba(0,0,0,0.175);
-  box-shadow: 0 3px 3px rgba(0,0,0,0.175);
 }
 
 /*
@@ -287,39 +173,4 @@ section {
   }
 }
 
-
-/* Not enough room on mobile for markup tab, js tab, and plunk btn.
-  And no one cares about plunk button on a phone anyway */
-@media only screen and (max-device-width: 480px) {
-  #plunk-btn {
-    display: none;
-  }
-}
-
-.navbar-nav .dropdown .navbar-brand {
-  max-width: 100%;
-  margin-right: inherit;
-  margin-left: inherit;
-}
-
-.header-placeholder {
-  height: 50px;
-}
-
-@media screen and (min-width: 768px) {
-
-  .dropdown.open > .navbar-brand + .dropdown-menu {
-    left: 10px;
-  }
-
-  .header-placeholder {
-    height: 50px;
-  }
-
-  .navbar-nav .dropdown .navbar-brand {
-    max-width: 200px;
-    margin-right: 5px;
-    margin-left: 10px;
-  }
-
-}
+/* END angular ui bootstrap section */
