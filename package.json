@@ -54,14 +54,10 @@
         },
         "fastclick": {
             "exports": "FastClick"
-        },
-        "smoothScroll":{
-            "exports": "smoothScroll"
         }
     },
     "browser":{
         "angular": "./node_modules/angular/angular.min.js",
-        "smoothScroll": "./assets/smoothscroll-angular-custom.js",
         "ui.bootstrap": "./node_modules/angular-bootstrap/dist/ui-bootstrap.min.js",
         "ngTouch": "./node_modules/angular-touch/angular-touch.min.js",
         "fastclick": "./node_modules/fastclick/build/fastclick.min.js",
