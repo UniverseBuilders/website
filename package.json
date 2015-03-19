@@ -1,6 +1,6 @@
 {
     "name": "ng-boot-boiler",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "description": "angular+bootstrap boilerplate with strong emphasis on modularity.",
     "bugs": {
         "url": "https://github.com/7yl4r/ng-boot-boiler/issues",
@@ -29,6 +29,13 @@
         ]
     },
     "browserify-shim": {
+        "fastclick": {
+            "exports": "FastClick"
+        },
+        "smoothScroll":{
+            "exports": "smoothScroll"
+        },
+
         "angular": {
             "exports": "global:angular"
         },
@@ -52,11 +59,9 @@
             "depends": "angular",
             "exports": "angular.module('app-footer').name"
         },
-        "fastclick": {
-            "exports": "FastClick"
-        },
-        "smoothScroll":{
-            "exports": "smoothScroll"
+        "social-button-directive": {
+            "depends": "angular",
+            "exports": "angular.module('social-button-directive').name"
         }
     },
     "browser":{
@@ -65,8 +70,10 @@
         "ui.bootstrap": "./node_modules/angular-bootstrap/dist/ui-bootstrap.min.js",
         "ngTouch": "./node_modules/angular-touch/angular-touch.min.js",
         "fastclick": "./node_modules/fastclick/build/fastclick.min.js",
+
         "header-navbar": "./ng-modules/navHeader/navHeader.js",
         "splash-header": "./ng-modules/splashHeader/splashHeader.js",
-        "app-footer": "./ng-modules/appFooter/appFooter.js"
+        "app-footer": "./ng-modules/appFooter/appFooter.js",
+        "social-button-directive": "./ng-modules/socialButtons/socialButtons.js"
     }
 }

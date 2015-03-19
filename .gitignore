@@ -1,5 +1,9 @@
 # jetbrains
 .idea/
 
+# build files
 bundle.js
+app.css
+
+# npm dependencies
 node_modules/
