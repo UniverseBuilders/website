@@ -1,8 +1,8 @@
 var app = angular.module(
     'splash-header',
     [
-        'social-button-directive'
-//        require('social-button-directive')
+//        'social-button-directive'
+        require('social-button-directive')
     ]
 );
 
