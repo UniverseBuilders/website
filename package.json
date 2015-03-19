@@ -36,7 +36,7 @@
             "exports": "smoothScroll"
         },
         "angular": {
-            "exports": "global:angular"
+            "exports": "angular"
         },
         "ui.bootstrap": {
             "depends": "angular",
