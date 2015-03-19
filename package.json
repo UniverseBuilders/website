@@ -47,17 +47,9 @@
             "depends": "angular",
             "exports": "angular.module('ngTouch').name"
         },
-        "header-navbar": {
-            "depends": "angular",
-            "exports": "angular.module('header-navbar').name"
-        },
         "splash-header": {
             "depends": "angular",
             "exports": "angular.module('splash-header').name"
-        },
-        "app-footer": {
-            "depends": "angular",
-            "exports": "angular.module('app-footer').name"
         },
         "social-button-directive": {
             "depends": "angular",
@@ -71,9 +63,7 @@
         "ngTouch": "./node_modules/angular-touch/angular-touch.min.js",
         "fastclick": "./node_modules/fastclick/build/fastclick.min.js",
 
-        "header-navbar": "./ng-modules/navHeader/navHeader.js",
         "splash-header": "./ng-modules/splashHeader/splashHeader.js",
-        "app-footer": "./ng-modules/appFooter/appFooter.js",
         "social-button-directive": "./ng-modules/socialButtons/socialButtons.js"
     }
 }
