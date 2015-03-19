@@ -51,17 +51,9 @@
             "depends": "angular",
             "exports": "angular.module('header-navbar').name"
         },
-        "splash-header": {
-            "depends": "angular",
-            "exports": "angular.module('splash-header').name"
-        },
         "app-footer": {
             "depends": "angular",
             "exports": "angular.module('app-footer').name"
-        },
-        "social-button-directive": {
-            "depends": "angular",
-            "exports": "angular.module('social-button-directive').name"
         }
     },
     "browser":{

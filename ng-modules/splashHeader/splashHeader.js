@@ -1,3 +1,5 @@
+require('angular');
+
 var app = angular.module(
     'splash-header',
     [
@@ -11,3 +13,5 @@ app.directive("splashHeader", function() {
         templateUrl: "ng-modules/splashHeader/splashHeader.html"
     };
 });
+
+module.exports = angular.module('splash-header').name;

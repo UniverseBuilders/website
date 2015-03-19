@@ -1,3 +1,5 @@
+require('angular');
+
 var app = angular.module('social-button-directive', []);
 
 app.controller("trustyUrl", ['$sce', '$scope', function($sce, $scope) {
@@ -40,3 +42,5 @@ app.directive("socialButtons", function() {
         }
     };
 });
+
+module.exports = angular.module('social-button-directive').name;
