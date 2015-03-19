@@ -1,0 +1,21 @@
+{
+    "name": "ng-boot-boiler",
+    "version": "0.0.1",
+    "description": "angular+bootstrap boilerplate with strong emphasis on modularity.",
+    "bugs": {
+        "url": "https://github.com/7yl4r/ng-boot-boiler/issues",
+        "email": "murray.tylar@gmail.com"
+    },
+    "contributors": [
+        "Tylar Murray <murray.tylar@gmail.com>"
+    ],
+    "repository" : {
+        "type" : "git",
+        "url" : "https://github.com/7yl4r/ng-boot-boiler.git"
+    },
+    "dependencies": {
+        "coffee-script": "~1.4.0",
+        "less": "~1.7.5",
+        "browserify": "~7.0.0"
+    }
+}
