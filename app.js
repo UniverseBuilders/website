@@ -1,23 +1,19 @@
 require('angular');
 require('fastclick');
 
-var ngDependencies = [
-    'ui.bootstrap',
-    'ngTouch',
-    'header-navbar',
-    'splash-header',
-    'app-footer'
-];
-
-dependencies.foreach(function(item){
-    require(item);
-});
-
 /* global FastClick, smoothScroll */
-var app = angular.module('ng-boot-boiler-demo', ngDependencies, function($httpProvider){
-    FastClick.attach(document.body);
-    delete $httpProvider.defaults.headers.common['X-Requested-With'];
-}).run(['$location', function($location){
+var app = angular.module('ng-boot-boiler-demo',
+    [
+        require('ui.bootstrap'),
+        require('ngTouch'),
+        require('header-navbar'),
+        require('splash-header'),
+        require('app-footer')
+    ], function($httpProvider){
+        FastClick.attach(document.body);
+        delete $httpProvider.defaults.headers.common['X-Requested-With'];
+    }
+).run(['$location', function($location){
     //Allows us to navigate to the correct element on initialization
     if ($location.path() !== '' && $location.path() !== '/') {
         smoothScroll(document.getElementById($location.path().substring(1)), 500, function(el) {
