@@ -1,6 +1,6 @@
 {
     "name": "ng-boot-boiler",
-    "version": "0.0.2",
+    "version": "0.0.3",
     "description": "angular+bootstrap boilerplate with strong emphasis on modularity.",
     "bugs": {
         "url": "https://github.com/7yl4r/ng-boot-boiler/issues",

@@ -3,7 +3,7 @@
 
 # build files
 bundle.js
-app.css
+bundle.css
 
 # npm dependencies
 node_modules/

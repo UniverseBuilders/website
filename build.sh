@@ -1,5 +1,5 @@
 echo 'compiling less css...'
-./node_modules/.bin/lessc -x ./app.less > ./app.css
+./node_modules/.bin/lessc -x ./app.less > ./bundle.css
 
 #echo 'transpiling .coffee into .js...'
 #./node_modules/.bin/coffee --output js/coffee --compile coffee
