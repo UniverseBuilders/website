@@ -35,7 +35,6 @@
         "smoothScroll":{
             "exports": "smoothScroll"
         },
-
         "angular": {
             "exports": "global:angular"
         },
@@ -46,14 +45,6 @@
         "ngTouch": {
             "depends": "angular",
             "exports": "angular.module('ngTouch').name"
-        },
-        "header-navbar": {
-            "depends": "angular",
-            "exports": "angular.module('header-navbar').name"
-        },
-        "app-footer": {
-            "depends": "angular",
-            "exports": "angular.module('app-footer').name"
         }
     },
     "browser":{
