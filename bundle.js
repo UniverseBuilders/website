@@ -2,6 +2,7 @@
 (function (global){
 (typeof window !== "undefined" ? window.angular : typeof global !== "undefined" ? global.angular : null);
 require('fastclick');
+require('smoothScroll');
 
 /* global FastClick, smoothScroll */
 var app = angular.module('ng-boot-boiler-demo',
@@ -93,7 +94,7 @@ var isOldBrowser;
 
 })();
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{"app-footer":2,"fastclick":7,"header-navbar":3,"ngTouch":5,"splash-header":8,"ui.bootstrap":4}],2:[function(require,module,exports){
+},{"app-footer":2,"fastclick":8,"header-navbar":4,"ngTouch":6,"smoothScroll":3,"splash-header":9,"ui.bootstrap":5}],2:[function(require,module,exports){
 (function (global){
 
 ; require("/home/tylar/ng-boot-boiler/node_modules/angular/angular.min.js");
@@ -113,7 +114,113 @@ var isOldBrowser;
 }).call(global, undefined, undefined, undefined, undefined, function defineExport(ex) { module.exports = ex; });
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{"/home/tylar/ng-boot-boiler/node_modules/angular/angular.min.js":6}],3:[function(require,module,exports){
+},{"/home/tylar/ng-boot-boiler/node_modules/angular/angular.min.js":7}],3:[function(require,module,exports){
+(function (global){
+;__browserify_shim_require__=require;(function browserifyShim(module, exports, require, define, browserify_shim__define__module__export__) {
+/*
+ * https://github.com/alicelieutier/smoothScroll/
+ * A teeny tiny, standard compliant, smooth scroll script with ease-in-out effect and no jQuery (or any other dependancy, FWIW).
+ * MIT License
+ */
+window.smoothScroll = (function(){
+// We do not want this script to be applied in browsers that do not support those
+// That means no smoothscroll on IE9 and below.
+if(document.querySelectorAll === void 0 || window.pageYOffset === void 0 || history.pushState === void 0) { return; }
+
+// Get the top position of an element in the document
+var getTop = function(element) {
+    // return value of html.getBoundingClientRect().top ... IE : 0, other browsers : -pageYOffset
+    if(element.nodeName === 'HTML') return -window.pageYOffset
+    return element.getBoundingClientRect().top + window.pageYOffset;
+}
+// ease in out function thanks to:
+// http://blog.greweb.fr/2012/02/bezier-curve-based-easing-functions-from-concept-to-implementation/
+var easeInOutCubic = function (t) { return t<.5 ? 4*t*t*t : (t-1)*(2*t-2)*(2*t-2)+1 }
+
+// calculate the scroll position we should be in
+// given the start and end point of the scroll
+// the time elapsed from the beginning of the scroll
+// and the total duration of the scroll (default 500ms)
+var position = function(start, end, elapsed, duration) {
+    if (elapsed > duration) return end;
+    return start + (end - start) * easeInOutCubic(elapsed / duration); // <-- you can change the easing funtion there
+    // return start + (end - start) * (elapsed / duration); // <-- this would give a linear scroll
+}
+
+// we use requestAnimationFrame to be called by the browser before every repaint
+// if the first argument is an element then scroll to the top of this element
+// if the first argument is numeric then scroll to this location
+// if the callback exist, it is called when the scrolling is finished
+var smoothScroll = function(el, duration, callback){
+    duration = duration || 500;
+    var start = window.pageYOffset;
+
+    if (typeof el === 'number') {
+      var end = parseInt(el);
+    } else {
+      var end = getTop(el);
+    }
+
+    var clock = Date.now();
+    var requestAnimationFrame = window.requestAnimationFrame ||
+        window.mozRequestAnimationFrame || window.webkitRequestAnimationFrame ||
+        function(fn){window.setTimeout(fn, 15);};
+
+    var step = function(){
+        var elapsed = Date.now() - clock;
+        window.scroll(0, position(start, end, elapsed, duration));
+        if (elapsed > duration) {
+            if (typeof callback === 'function') {
+                callback(el);
+            }
+        } else {
+            requestAnimationFrame(step);
+        }
+    }
+    step();
+}
+
+var linkHandler = function(ev) {
+    ev.preventDefault();
+
+    if (location.hash !== this.hash) {
+      //NOTE(@ajoslin): Changed this line to stop $digest errors
+      //window.history.pushState(null, null, this.hash)
+      angular.element(document).injector().get('$location').hash(this.hash);
+    }
+    // using the history api to solve issue #1 - back doesn't work
+    // most browser don't update :target when the history api is used:
+    // THIS IS A BUG FROM THE BROWSERS.
+    // change the scrolling duration in this call
+    var targetEl = document.getElementById(this.hash.substring(1));
+    if (targetEl) {
+      smoothScroll(document.getElementById(this.hash.substring(1)), 500, function(el) {
+        location.replace('#' + el.id)
+        // this will cause the :target to be activated.
+      });
+    }
+}
+
+// We look for all the internal links in the documents and attach the smoothscroll function
+document.addEventListener("DOMContentLoaded", function () {
+    var internal = document.querySelectorAll('a[href^="#"]'), a;
+    for(var i=internal.length; a=internal[--i];){
+        a.addEventListener("click", linkHandler, false);
+    }
+});
+
+// return smoothscroll API
+return smoothScroll;
+
+})();
+
+
+; browserify_shim__define__module__export__(typeof smoothScroll != "undefined" ? smoothScroll : window.smoothScroll);
+
+}).call(global, undefined, undefined, undefined, undefined, function defineExport(ex) { module.exports = ex; });
+
+}).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
+},{}],4:[function(require,module,exports){
 (function (global){
 
 ; require("/home/tylar/ng-boot-boiler/node_modules/angular/angular.min.js");
@@ -133,7 +240,7 @@ var isOldBrowser;
 }).call(global, undefined, undefined, undefined, undefined, function defineExport(ex) { module.exports = ex; });
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{"/home/tylar/ng-boot-boiler/node_modules/angular/angular.min.js":6}],4:[function(require,module,exports){
+},{"/home/tylar/ng-boot-boiler/node_modules/angular/angular.min.js":7}],5:[function(require,module,exports){
 (function (global){
 
 ; require("/home/tylar/ng-boot-boiler/node_modules/angular/angular.min.js");
@@ -152,7 +259,7 @@ return a.replace(b,function(a,b){return(b?c:"")+a.toLowerCase()})}var b={placeme
 }).call(global, undefined, undefined, undefined, undefined, function defineExport(ex) { module.exports = ex; });
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{"/home/tylar/ng-boot-boiler/node_modules/angular/angular.min.js":6}],5:[function(require,module,exports){
+},{"/home/tylar/ng-boot-boiler/node_modules/angular/angular.min.js":7}],6:[function(require,module,exports){
 (function (global){
 
 ; require("/home/tylar/ng-boot-boiler/node_modules/angular/angular.min.js");
@@ -176,7 +283,7 @@ l,!0),f=[]),m=Date.now(),d(f,h,t),r&&r.blur(),u.isDefined(g.disabled)&&!1!==g.di
 }).call(global, undefined, undefined, undefined, undefined, function defineExport(ex) { module.exports = ex; });
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{"/home/tylar/ng-boot-boiler/node_modules/angular/angular.min.js":6}],6:[function(require,module,exports){
+},{"/home/tylar/ng-boot-boiler/node_modules/angular/angular.min.js":7}],7:[function(require,module,exports){
 /*
  AngularJS v1.3.15
  (c) 2010-2014 Google, Inc. http://angularjs.org
@@ -429,7 +536,7 @@ Ac=function(){return{restrict:"A",require:"?ngModel",link:function(a,c,d,e){if(e
 e.$validators.maxlength=function(a,c){return 0>f||e.$isEmpty(c)||c.length<=f}}}}},Cc=function(){return{restrict:"A",require:"?ngModel",link:function(a,c,d,e){if(e){var f=0;d.$observe("minlength",function(a){f=aa(a)||0;e.$validate()});e.$validators.minlength=function(a,c){return e.$isEmpty(c)||c.length>=f}}}}};Q.angular.bootstrap?console.log("WARNING: Tried to load angular more than once."):(Nd(),Pd(ca),A(W).ready(function(){Jd(W,uc)}))})(window,document);!window.angular.$$csp()&&window.angular.element(document).find("head").prepend('<style type="text/css">@charset "UTF-8";[ng\\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide:not(.ng-hide-animate){display:none !important;}ng\\:form{display:block;}</style>');
 //# sourceMappingURL=angular.min.js.map
 
-},{}],7:[function(require,module,exports){
+},{}],8:[function(require,module,exports){
 (function (global){
 ;__browserify_shim_require__=require;(function browserifyShim(module, exports, require, define, browserify_shim__define__module__export__) {
 /*
@@ -465,7 +572,7 @@ FastClick.notNeeded=function(a){var c,b;if("undefined"===typeof window.ontouchst
 }).call(global, undefined, undefined, undefined, undefined, function defineExport(ex) { module.exports = ex; });
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{}],8:[function(require,module,exports){
+},{}],9:[function(require,module,exports){
 (function (global){
 
 ; require("/home/tylar/ng-boot-boiler/node_modules/angular/angular.min.js");
@@ -485,4 +592,4 @@ FastClick.notNeeded=function(a){var c,b;if("undefined"===typeof window.ontouchst
 }).call(global, undefined, undefined, undefined, undefined, function defineExport(ex) { module.exports = ex; });
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{"/home/tylar/ng-boot-boiler/node_modules/angular/angular.min.js":6}]},{},[1]);
+},{"/home/tylar/ng-boot-boiler/node_modules/angular/angular.min.js":7}]},{},[1]);
