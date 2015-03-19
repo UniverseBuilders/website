@@ -17,5 +17,14 @@
         "coffee-script": "~1.4.0",
         "less": "~1.7.5",
         "browserify": "~7.0.0"
+    },
+    "browser":{
+        "angular": "//cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.14/angular.min.js",
+        "fastclick": "//cdnjs.cloudflare.com/ajax/libs/fastclick/0.6.7/fastclick.min.js",
+        "ui.bootstrap": "//cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.12.1/ui-bootstrap.min.js",
+        "ngTouch": "//cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.14/angular-touch.min.js",
+        "header-navbar": "navHeader/navHeader.js",
+        "splash-header": "splashHeader/splashHeader.js",
+        "app-footer": "appFooter/appFooter.js"
     }
 }
