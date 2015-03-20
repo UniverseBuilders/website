@@ -1,6 +1,7 @@
 require('angular');
 require('fastclick');
 require('smoothScroll');
+require('str');
 
 /* global FastClick, smoothScroll */
 var app = angular.module('ng-boot-boiler-demo',

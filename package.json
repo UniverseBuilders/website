@@ -54,6 +54,7 @@
         "ui.bootstrap": "./node_modules/angular-bootstrap/dist/ui-bootstrap.min.js",
         "ngTouch": "./node_modules/angular-touch/angular-touch.min.js",
         "fastclick": "./node_modules/fastclick/build/fastclick.min.js",
+        "str": "./str.js",
 
         "header-navbar": "./ng-modules/navHeader/navHeader.js",
         "splash-header": "./ng-modules/splashHeader/splashHeader.js",
