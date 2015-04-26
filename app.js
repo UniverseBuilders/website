@@ -24,6 +24,13 @@ var app = angular.module('ng-boot-boiler-demo',
 }]);
 
 app.controller('MainCtrl', function($scope, $http, $document, $modal, orderByFilter) {
+    var vm = this;
+    vm.watwat = "watwatwat";
+    vm.appStrings = {
+        name: 'ng-boot-boiler DEMO',
+        subtitle: 'SPAs w/ BABL modules!'
+    };
+
     $scope.showBuildModal = function() {
         var modalInstance = $modal.open({
             templateUrl: 'buildModal.html',

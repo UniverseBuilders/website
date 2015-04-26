@@ -16,17 +16,27 @@
     <link rel="stylesheet" href="bundle.css"/>
 
     <link rel="author" href="https://github.com/7yl4r">
-</head>
-<body class="ng-cloak" ng-controller="MainCtrl">
 
-<nav-header></nav-header>
+</head>
+<body class="ng-cloak" ng-controller="MainCtrl as MainCtrl">
+
+<nav-header name='ng-boot-boiler'
+            strings="{
+                name:'test name example',
+                subtitle:'single-page apps built on bootstrap and ABL components'
+                }"
+            stringstwo="MainCtrl.appStrings"></nav-header>
 
 <div role="main">
 
-    <splash-header></splash-header>
+    <splash-header app-data="{subtitle:'single-page apps built on bootstrap and ABL components'}"></splash-header>
 
     <div class="container">
-        website content here
+        website content here <br><br>
+
+        {{MainCtrl.appStrings}}
+        {{MainCtrl.watwat}}
+
     </div><!-- /.container -->
 
 </div><!-- /.main -->
