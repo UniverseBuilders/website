@@ -122,6 +122,7 @@ a {
     }
 }
 
+@intro-bg-img-url: "@{rootdir}../assets/img/header-bg.png";
 .intro {
     display: table;
     width: 100%;
@@ -129,7 +130,7 @@ a {
     padding: 100px 0;
     text-align: center;
     color: white;
-    background: url(../assets/img/header-bg.png) no-repeat bottom center scroll;
+    background: url(@intro-bg-img-url) no-repeat bottom center scroll;
     background-color: black;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -236,11 +237,12 @@ a {
     padding-top: 100px;
 }
 
+@dl-bg-img-url: "@{rootdir}../assets/img/av-bg.jpg";
 .download-section {
     width: 100%;
     padding: 50px 0;
     color: white;
-    background: url(../assets/img/av-bg.jpg) no-repeat center center scroll;
+    background: url(@dl-bg-img-url) no-repeat center center scroll;
     background-color: black;
     -webkit-background-size: cover;
     -moz-background-size: cover;
